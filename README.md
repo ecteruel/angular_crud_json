@@ -1273,7 +1273,7 @@ export class ConsultarComponent {
 
 Vamos criar o módulo para a opção Excluir do Menu. Um formulário será apresentado para digitação do ID, com um botão Excluir.
 
-Agora coloque no componente **consultar.component.html** o código abaixo:
+Agora coloque no componente **excluir.component.html** o código abaixo:
 
 ```bash
 <div class="excluir-container">
