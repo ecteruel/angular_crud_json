@@ -886,7 +886,7 @@ Agora vamos alterar o **listagem.componente.html**, incluindo um link para ediç
 > *ngIf="cliente.id" só mostra esse botão se cliente.id existir (não for null ou undefined).
 > O Angular vai montar uma URL baseada nisso. Aqui, alterar é uma rota (por exemplo /alterar/123) e cliente.id é o ID específico do cliente. Assim, se cliente.id for 123, vai navegar para http://localhost:4200/alterar/5.
 
-## Lembre-se de verificar no arquivo app.routes.ts se a rota para o componente alterar faz com que este componente receba o ID a ser alterado, conforme mostrado na linha abaixo. 
+**Lembre-se de verificar no arquivo app.routes.ts se a rota para o componente alterar faz com que este componente receba o ID a ser alterado, conforme mostrado na linha abaixo**. 
 
 ```bash
   { path: 'alterar/:id', component: AlterarComponent },
@@ -1275,7 +1275,7 @@ export class ConsultarComponent {
   }
 }
 ```
-## Verifique se no arquivo clientes.service.ts, que contem a classe ClientesService, se tem a função buscarPorId, abaixo. 
+**Verifique se no arquivo clientes.service.ts, que contem a classe ClientesService, se tem a função buscarPorId, abaixo**. 
 
 ```bash
  buscarPorId(id: number): Observable<Cliente | undefined> {
