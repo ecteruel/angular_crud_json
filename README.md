@@ -886,6 +886,12 @@ Agora vamos alterar o **listagem.componente.html**, incluindo um link para ediç
 > *ngIf="cliente.id" só mostra esse botão se cliente.id existir (não for null ou undefined).
 > O Angular vai montar uma URL baseada nisso. Aqui, alterar é uma rota (por exemplo /alterar/123) e cliente.id é o ID específico do cliente. Assim, se cliente.id for 123, vai navegar para http://localhost:4200/alterar/5.
 
+## Lembre-se de verificar no arquivo app.routes.ts se a rota para o componente alterar faz com que este componente receba o ID a ser alterado, conforme mostrado na linha abaixo. 
+
+```bash
+  { path: 'alterar/:id', component: AlterarComponent },
+```
+
 Para que o routerLink funcione aqui, é preciso importar o **RouterModule** no arquivo **listagem.componente.ts**.
 
 ```bash
@@ -1127,6 +1133,7 @@ form {
 > •	Em seguida, após a conclusão da edição o componente listagem é carregado this.router.navigate(['/listagem']);
 > •	No componente de listagem (listagem.componente.ts), o ngOnInit() é executado e chama o método this.carregarClientes();, que, por sua vez, chama o método listar da classe de serviço (clientes.service.ts) e os dados são obtidos e exibidos pelo listagem.componente.html.
 
+
 ## MODULO CONSULTAR
 
 Vamos criar o módulo para a opção Consultar do Menu. Um formulário será apresentado para digitação do ID, com um botão Buscar.
@@ -1268,7 +1275,13 @@ export class ConsultarComponent {
   }
 }
 ```
+## Verifique se no arquivo clientes.service.ts, que contem a classe ClientesService, se tem a função buscarPorId, abaixo. 
 
+```bash
+ buscarPorId(id: number): Observable<Cliente | undefined> {
+    return this.http.get<Cliente>(this.API + `/${id}`);
+  }
+```
 ## MODULO EXCLUIR
 
 Vamos criar o módulo para a opção Excluir do Menu. Um formulário será apresentado para digitação do ID, com um botão Excluir.
